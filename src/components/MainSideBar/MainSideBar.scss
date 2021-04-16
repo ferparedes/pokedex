@@ -1,0 +1,112 @@
+@import "../../mixins/mixin.breakpoints.scss";
+
+#MainSidebar {    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  
+    .wrap {
+      width: 300px;
+      flex: 1 1 auto;
+      overflow: hidden;
+      $menu-color: #566cd6; 
+      background: $menu-color;
+      @include responsive {
+        width: 100%;   
+        overflow: visible;   
+      }      
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      align-content: center;
+      position: relative;
+  
+      .menu-toggle {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+  
+        @include responsive {
+          display: block;
+        }
+        
+        img {
+          width: 24px;
+        }
+      }
+  
+      .logo {
+        padding-top: 1.2em;
+        text-align: center;
+        @include responsive {
+          padding-top: 0.5em; 
+          padding-bottom: 0.5em; 
+        }
+  
+        img {
+          width: 80%;
+          max-width: 120px;              
+        }      
+      }
+  
+      .user-wrap {
+        position: relative;
+  
+        .user {
+          text-align: center;     
+          @include responsive {
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            left: -100%;
+            z-index: 2;
+            background: $menu-color;
+            transition: left 0.7s ease;
+            &.active {
+              left: 0%;
+            }
+          }        
+  
+          .avatar {
+            padding-top: 2em;               
+      
+            img {
+              width: 60%;
+              max-width: 180px;      
+              @include responsive {
+                max-width: 120px;      
+              } 
+            }      
+          }
+      
+          .name {
+            padding-top: 1em;
+            color: #fff;
+            font-size: 1.6em;
+            font-weight: 600;        
+          }
+    
+          .level {
+            padding-top: 0.1em;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 400;        
+            opacity: 0.7;
+          }
+    
+          .message {
+            padding-top: 2em;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 400;        
+            opacity: 0.8;
+            @include responsive {
+              padding-top: 1em;  
+              padding-bottom: 1em;    
+            } 
+          }
+        } 
+      }       
+    }  
+  }

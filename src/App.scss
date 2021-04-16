@@ -1,0 +1,53 @@
+@import "./mixins/mixin.breakpoints.scss";
+$border-radius: 28px;
+
+html {
+  height: 100%;
+  margin: 0px;  
+}
+
+* {
+  color: #40415E;
+}
+
+$transition-layout-width: width 0.55s ease;
+
+#app {
+  display: flex;    
+  height: 100vh;
+  @include responsive {
+    flex-direction: column;
+  }
+}
+
+#MainContainer {
+  padding: 20px 40px;
+  display: flex;  
+  flex: 1 1 auto;
+  overflow-y: auto;
+  background: #FBFCFF;
+  transition: $transition-layout-width;
+  @include responsive {
+    padding: 20px;
+  }
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row;             
+    justify-content: space-around;        
+    align-items: center;        
+               
+    .search-bar {            
+        align-self: flex-end;           
+        justify-items: flex-end; 
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        @include responsive {
+            padding-left: 10px;
+        }
+    }
+}
+}
+

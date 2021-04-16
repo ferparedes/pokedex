@@ -1,0 +1,12 @@
+$border-radius: 28px;
+
+.return {            
+    padding: 0 1.1em;
+    height: 100%;
+    background: #566CD6;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}

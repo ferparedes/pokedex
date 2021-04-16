@@ -1,0 +1,36 @@
+$border-radius: 28px;
+
+.search-bar {    
+    position: relative;
+
+    input  {
+        padding: 0.8em 1.5em;
+        width: 100%;        
+        max-width: 350px;
+        color: #40415E;
+        font-size: 1em;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 5px rgba(153, 153, 153, 0.08);
+        border-radius: $border-radius;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #40415e81;
+        }
+    }    
+
+    .icon {
+        position: absolute;
+        top: 0px;
+        right: 0px;        
+        padding: 0 1.5em;
+        height: 100%;
+        background: #566CD6;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

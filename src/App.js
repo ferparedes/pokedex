@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import store from './redux/store';
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+import MainSideBar from './components/MainSideBar/MainSideBar';
+import Pokedex from './components/Pokedex/Pokedex';
+import PokemonDetail from './components/PokemonDetail/PokemonDetail'
+import SearchBarPokemons from './components/SearchBarPokemons/SearchBarPokemons';
+import HeaderBack from './components/HeaderBack/HeaderBack';
+
+const apiPokedex = 'https://pokeapi.co/api/v2/pokemon/';
+
+function App() {  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div id="app">
+        <Router>
+          <MainSideBar />
+          <div id="MainContainer">            
+            <div className="header">
+              <HeaderBack />              
+              <SearchBarPokemons />
+            </div>
+            <Switch>
+              <Route path="/pokemon/:pokemonId">
+                <PokemonDetail />
+              </Route>
+              <Route path="/">
+                <Pokedex />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

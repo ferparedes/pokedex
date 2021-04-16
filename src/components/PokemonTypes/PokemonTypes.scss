@@ -1,0 +1,125 @@
+@import "../../mixins/mixin.breakpoints.scss";
+
+$base-color: #F4F4F4;
+$shine-color: rgba(229,229,229,0.8);
+$animation-duration: 2.2s;
+
+
+@mixin background-gradient {
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $base-color 80px);
+  background-size: 600px;
+}
+
+@keyframes shine-type {
+    0% {
+        background-position: -100px;
+    }  
+    40%, 100% {
+        background-position: 150px;
+    }
+}
+
+.pokemon-types {
+    padding-top: 2em;
+    display: flex;    
+    align-items: center;
+    justify-content: center;    
+    align-self: stretch;
+    flex-wrap: wrap;    
+    @include mobile {
+        padding-top: 1em;
+    }
+
+    .skeleton-loader {    
+        align-self: center;
+        border-radius: 16px;
+        width: 120px;
+        height: 25px;             
+        @include background-gradient;
+        animation: shine-type $animation-duration infinite ease-out;
+    }
+
+    .pokemon-type {
+        margin: 0 0.5em 0 0;
+        padding: 2px 1em;
+        background: #888;
+        color: #fff;
+        text-transform: capitalize;
+        border-radius: 16px;
+        font-size: 15px;
+
+        @include mobile {
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        &.normal {
+            background-color: #A8A878;            
+        }
+        
+        &.fire {
+            background-color: #F08030;            
+        }
+        
+        &.water {
+            background-color: #6890F0;
+        }
+        
+        &.electric {
+            background-color: #F8D030;
+        }
+        
+        &.grass {
+            background-color: #78C850;
+        }
+        
+        &.ice {
+            background-color: #98D8D8;
+        }
+        
+        &.ground {
+            background-color: #E0C068;
+        }
+        
+        &.flying {
+            background-color: #A890F0;
+        }
+        
+        &.ghost {
+            background-color: #705898;
+        }
+        
+        &.rock {
+            background-color: #B8A038;
+        }
+        
+        &.fighting {
+            background-color: #C03028;            
+        }
+        
+        &.poison {
+            background-color: #a040a0;            
+        }
+        
+        &.psychic {
+            background-color: #F85888;            
+        }
+        
+        &.bug {
+            background-color: #A8B820;
+        }
+        
+        &.dark {
+            background-color: #705848;
+        }
+        
+        &.steel {
+            background-color: #B8B8D0;
+        }
+        
+        &.dragon {
+            background-color: #7038F8;
+        }
+    }
+    
+}

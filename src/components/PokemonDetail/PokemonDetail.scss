@@ -1,0 +1,85 @@
+@import "../../mixins/mixin.breakpoints.scss";
+
+$border-radius: 28px;
+
+#PokemonDetail {    
+    margin-top: 3em;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;    
+    @include responsive {
+        flex-direction: column;
+    }
+    
+    .gallery {            
+
+        .wrap {                    
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 5px rgba(153, 153, 153, 0.08);
+            border-radius: 16px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;        
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 1em;
+            width: 300px;
+
+            @include responsive {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+    
+           
+            .main-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;           
+            }        
+        }
+    }
+
+    .detail {     
+        padding-left: 20px;          
+        flex: 1 1 auto; 
+        @include responsive {
+            padding-left: 0px;      
+        }
+
+        .wrap {        
+            padding: 3em 2.5em;            
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 5px rgba(153, 153, 153, 0.08);
+            border-radius: 16px;
+            background-color: #fff;    
+           
+            .name {
+                font-size: 3em;
+                font-weight: 600;
+                text-transform: capitalize;
+            }      
+
+            .pokemon-types {
+                padding-top: 1em;
+                padding-bottom: 1em;
+                justify-content: start;
+            }
+
+            .feature {
+                padding-top: 1em;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;                
+                font-size: 1.3em;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+                b {
+                    font-size: 1.2em;
+                    font-weight: 500;
+                }
+
+                .thumbs {
+                    margin-left: -25px;                    
+                }
+            }
+        }
+    }
+}

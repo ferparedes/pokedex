@@ -1,0 +1,18 @@
+@import "../../mixins/mixin.breakpoints.scss";
+
+.GridPokemons {
+    padding-top: 50px;
+    display: flex;    
+    flex-wrap: wrap;    
+    justify-content: space-between;
+    flex: 1 1 auto;
+    
+    .card-pokemon {        
+        flex: 0 1 32%;
+        margin-bottom: 20px;        
+
+        @include mobile {
+            flex: 0 1 48%;
+        }
+    }
+}
